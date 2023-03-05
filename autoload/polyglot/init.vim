@@ -2109,7 +2109,7 @@ endif
 
 if !has_key(g:polyglot_is_disabled, 'objc')
   au! BufNewFile,BufRead,BufWritePost *.m call polyglot#detect#M()
-  au! BufNewFile,BufRead,BufWritePost *.h call polyglot#detect#H()
+  " au! BufNewFile,BufRead,BufWritePost *.h call polyglot#detect#H()
 endif
 
 if !has_key(g:polyglot_is_disabled, 'nix')
@@ -2537,9 +2537,9 @@ if !has_key(g:polyglot_is_disabled, 'arduino')
 endif
 
 if !has_key(g:polyglot_is_disabled, 'c/c++')
-  au! BufNewFile,BufRead,BufWritePost *.h call polyglot#detect#H()
+  " au! BufNewFile,BufRead,BufWritePost *.h call polyglot#detect#H()
   au BufNewFile,BufRead *.c++,*.cc,*.cp,*.cpp,*.cxx,*.h++,*.hh,*.hpp,*.hxx,*.inc,*.inl,*.ipp,*.ixx,*.moc,*.tcc,*.tlh,*.tpp setf cpp
-  au! BufNewFile,BufRead,BufWritePost *.h call polyglot#detect#H()
+  " au! BufNewFile,BufRead,BufWritePost *.h call polyglot#detect#H()
   au BufNewFile,BufRead *.c,*.cats,*.idc,*.qc,*enlightenment/*.cfg setf c
 endif
 
@@ -2928,7 +2928,7 @@ if !has_key(g:polyglot_is_disabled, 'autoindent')
     let dir = expand('%:p:h')
     let level = 3
     while isdirectory(dir) && dir !=# fnamemodify(dir, ':h') && level > 0
-      " Ignore files from homedir and root 
+      " Ignore files from homedir and root
       if dir == expand('~') || dir == '/'
         unlet b:sleuth_culprit
         return
